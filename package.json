@@ -1,0 +1,9 @@
+{
+  "name": "futureboard-band-runtime",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "type": "module"
+}
