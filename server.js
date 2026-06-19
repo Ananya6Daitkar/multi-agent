@@ -502,13 +502,13 @@ function readJson(request) {
 }
 
 async function handleRequest(request, response) {
-  if (request.method === "GET" && request.url === "/") {
+  if (request.method === "GET") {
     response.writeHead(200, { "content-type": "text/html; charset=utf-8" });
     response.end(html);
     return;
   }
 
-  if (request.method === "POST" && request.url === "/api/run-decision") {
+  if (request.method === "POST" && (request.url === "/api/run-decision" || request.url === "/api" || request.url === "/api/")) {
     try {
       const input = await readJson(request);
       const result = await runDecision({
